@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26C177EA-4656-43C7-B05E-7C1956E175E8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NewDesignedTranslator</RootNamespace>
+    <AssemblyName>Переводчик</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.3.4, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.4\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Program Files\MySQL\v4.6.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BackgroundProcesses.cs" />
+    <Compile Include="Classes\SettingsDB.cs" />
+    <Compile Include="Classes\TranslatorClasses\Mistakes\MisspelledWord.cs" />
+    <Compile Include="Classes\TranslatorClasses\Mistakes\UNTDatabaseManager.cs" />
+    <Compile Include="Classes\TranslatorClasses\TextHighlighter.cs" />
+    <Compile Include="Forms\ChangeTranslationGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeTranslationGUI.Designer.cs">
+      <DependentUpon>ChangeTranslationGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\TranslatorClasses\Mistakes\MistakeHandler.cs" />
+    <Compile Include="Classes\TranslatorClasses\Mistakes\PotentialMisspelledWord.cs" />
+    <Compile Include="Classes\TranslatorClasses\TranslatorRules.cs" />
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Forms\Messages\fatalErrorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\fatalErrorBox.Designer.cs">
+      <DependentUpon>fatalErrorBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\infoBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\infoBox.Designer.cs">
+      <DependentUpon>infoBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\AboutDeveloperGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\AboutDeveloperGUI.Designer.cs">
+      <DependentUpon>AboutDeveloperGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\reportABugGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\reportABugGUI.Designer.cs">
+      <DependentUpon>reportABugGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\TermsOfUseGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\Information\TermsOfUseGUI.Designer.cs">
+      <DependentUpon>TermsOfUseGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\TranslationManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\TranslationManager.Designer.cs">
+      <DependentUpon>TranslationManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Messages\errorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Messages\errorBox.Designer.cs">
+      <DependentUpon>errorBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Internet\InternetCheck.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\TranslatorClasses\Translator.cs" />
+    <Compile Include="UserControls\CustomControls\IGTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CustomControls\IGTextBox.Designer.cs">
+      <DependentUpon>IGTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Programm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Programm.Designer.cs">
+      <DependentUpon>Programm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_info.Designer.cs">
+      <DependentUpon>UC_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_update.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_update.Designer.cs">
+      <DependentUpon>UC_update.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\ChangeTranslationGUI.resx">
+      <DependentUpon>ChangeTranslationGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\fatalErrorBox.resx">
+      <DependentUpon>fatalErrorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\infoBox.resx">
+      <DependentUpon>infoBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\Information\AboutDeveloperGUI.resx">
+      <DependentUpon>AboutDeveloperGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\Information\reportABugGUI.resx">
+      <DependentUpon>reportABugGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\Information\TermsOfUseGUI.resx">
+      <DependentUpon>TermsOfUseGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\TranslationManager.resx">
+      <DependentUpon>TranslationManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Messages\errorBox.resx">
+      <DependentUpon>errorBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\CustomControls\IGTextBox.resx">
+      <DependentUpon>IGTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Programm.resx">
+      <DependentUpon>Programm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_info.resx">
+      <DependentUpon>UC_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_update.resx">
+      <DependentUpon>UC_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
+    </ItemGroup>
+    <Move SourceFiles="@(MoveToLibFolder)" DestinationFolder="$(OutputPath)lib" OverwriteReadOnlyFiles="true" />
+  </Target>
+</Project>
