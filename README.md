@@ -1,6 +1,6 @@
 # ⚡**MoldovaTranslator**⚡
 ## 🎯**Purpose of this App**
-This application is aimed at facilitating translation from the Moldovan language ``(Unrecognized by all translators)`` into Romanian. This software has no analogues, so I created it.
+This application is aimed at facilitating translation from the Romanian Cyrilic language ``(Used in Transnitstria)`` into Romanian. This software has no analogues, so I created it.
 ## 🔽**Instalation**
 Just open the ``.sln`` file and ``build`` the solution!
 ## 🤔**Usage**
